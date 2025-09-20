@@ -1,0 +1,292 @@
+
+:root {
+    --primary-color: #b98c18; /* Dourado */
+    --secondary-color: #bea31a; /* dourado apagado */
+    --background-light: #ffffff; /* Fundo Branco */
+    --text-dark: #343a40; /* Cor do texto principal */
+    --text-light: #ffffff; /* Cor do texto em fundos escuros */
+    --card-bg: #f8f9fa; /* Fundo dos cartões */
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos Gerais do Corpo */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+/* Estilo para Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+p {
+    font-size: 1.125rem;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--primary-color) !important;
+    padding: 3rem 1rem !important;
+    box-shadow: var(--box-shadow);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+header.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+header.bg-success {
+    background-color: var(--secondary-color) !important;
+}
+
+header.bg-info {
+    background-color: var(--secondary-color) !important;
+}
+
+header h1 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-light) !important;
+}
+
+/* Barra de Navegação */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: var(--text-dark) !important;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.nav-link.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Seção Principal */
+main.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Estilo do Quiz (Contêiner Principal) */
+#quiz-root {
+    max-width: 600px;
+    margin: auto;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Estilo do Card dentro do contêiner */
+#quiz-root .card {
+    border: 1px;
+    border-radius: 0.5px;
+    box-shadow: 0 4px 5px rgb(250, 249, 249);
+    background-color: var(--card-bg);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Botões */
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #A98C2A;
+    border-color: #A98C2A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer.bg-dark {
+    background-color: var(--text-dark) !important;
+    padding: 2rem 1rem !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--background-light) !important;
+}
+
+/* Estilos para Imagens Fofas */
+.cute-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 8px 15px rgb(255, 255, 255);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cute-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para Ícones Fofos */
+.cute-icon {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+/* Estilos para a resposta correta */
+.btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: #fff !important;
+}
+
+/* Estilos para a resposta incorreta */
+.btn-danger {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+/* Adicionado: Animações de Transição de Pergunta */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.question-container {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Estilo para a resposta selecionada em quiz pessoal */
+.btn-selected {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--text-light) !important;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de hover para o botão selecionado */
+.btn-selected:hover {
+    background-color: #A98C2A !important;
+    border-color: #A98C2A !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(216, 30, 30, 0.2);
+}
+
+/* Sobrescrevendo a sombra azul de foco do Bootstrap */
+.btn:focus,
+.btn:active:focus,
+.btn-outline-primary:focus,
+.btn-outline-primary:active:focus,
+.btn-primary:focus,
+.btn-primary:active:focus {
+    box-shadow: 0 0 0 0.25rem rgba(185, 140, 24, 0.25) !important;
+    border-color: var(--primary-color) !important;
+    outline: none !important;
+}
+
+/* Garante que o botão selecionado (se houver) não tenha a sombra azul de foco */
+.btn-selected:focus {
+    box-shadow: 0 0 0 0.25rem rgba(185, 140, 24, 0.25) !important;
+    border-color: var(--primary-color) !important;
+    outline: none !important;
+}
+
+/* Estilo para botões desabilitados */
+.btn-secondary.disabled {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: var(--text-dark) !important;
+    opacity: 0.8; 
+    cursor: not-allowed;
+    pointer-events: none; 
+}
+
+/* Estilo para o botão de começar o quiz */
+.btn-quiz-start {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--text-light) !important;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.btn-quiz-start:hover {
+    background-color: #A98C2A !important;
+    border-color: #A98C2A !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o botão de quiz já feito (desabilitado) */
+.btn-quiz-done {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #fff !important;
+    cursor: not-allowed;
+    border-radius: 50px;
+    font-weight: 600;
+}
